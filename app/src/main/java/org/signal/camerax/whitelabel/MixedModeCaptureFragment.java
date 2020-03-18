@@ -31,7 +31,10 @@ public class MixedModeCaptureFragment extends Fragment {
   private CameraView cameraView;
 
   @Override
-  public @Nullable View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+  public @Nullable View onCreateView(@NonNull LayoutInflater inflater,
+                                     @Nullable ViewGroup container,
+                                     @Nullable Bundle savedInstanceState)
+  {
     return inflater.inflate(R.layout.mixed_mode_capture_fragment, container, false);
   }
 
