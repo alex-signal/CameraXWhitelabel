@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mixedModeCaptureFragment">
+
+    <fragment
+        android:id="@+id/mixedModeCaptureFragment"
+        android:name="org.signal.camerax.whitelabel.MixedModeCaptureFragment"
+        android:label="mixed_mode_capture_fragment"
+        tools:layout="@layout/mixed_mode_capture_fragment">
+
+        <action
+            android:id="@+id/action_mixedModeCaptureFragment_to_imageViewerFragment"
+            app:destination="@id/imageViewerFragment" >
+
+            <argument android:name="path"
+                      app:argType="android.net.Uri"
+                      app:nullable="false" />
+
+        </action>
+
+        <action
+            android:id="@+id/action_mixedModeCaptureFragment_to_playbackFragment"
+            app:destination="@id/playbackFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/playbackFragment"
+        android:name="org.signal.camerax.whitelabel.PlaybackFragment"
+        android:label="playback_fragment"
+        tools:layout="@layout/playback_fragment" />
+
+    <fragment
+        android:id="@+id/imageViewerFragment"
+        android:name="org.signal.camerax.whitelabel.ImageViewerFragment"
+        android:label="image_viewer_fragment"
+        tools:layout="@layout/image_viewer_fragment">
+
+        <argument android:name="path"
+                  app:argType="android.net.Uri"
+                  app:nullable="false" />
+
+    </fragment>
+
+</navigation>
